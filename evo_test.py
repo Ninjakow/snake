@@ -1,9 +1,23 @@
 from evolve import Evolution
-from creature import Creature
 import matplotlib.pyplot as plt
 from tqdm import tqdm
+import random
+
 
 progress = []
+
+
+class Creature:
+
+    def __init__(self, traits=None):
+        if traits == None:
+            self.traits = [random.random() for i in range(10)]
+        else:
+            self.traits = traits
+
+
+if __name__ == "__main__":
+    a = Creature(1)
 
 
 def fitness_rankings(in_list):
