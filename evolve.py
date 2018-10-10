@@ -11,9 +11,9 @@ class Evolution:
         self.mutation_num = int(population_size * mutation_percent)
 
     def selection(self, ranked_population):
-        cutoff = self.survival_num - 2
+        cutoff = self.survival_num - self.luck_num
         survivors = ranked_population[:cutoff]
-        survivors += random.sample(ranked_population[cutoff:], 2)
+        survivors += random.sample(ranked_population[cutoff:], self.luck_num)
         return survivors
 
     def breeding(self, population):
